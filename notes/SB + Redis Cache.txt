@@ -1,0 +1,166 @@
+=========================================
+Spring Boot with Redis Cache Integration
+=========================================
+
+==============
+Introduction
+==============
+
+-> Every application will interact with database to store and retrieve data
+
+-> In DB we will maintain data in tables (Rows & Columns)
+
+-> DB tables are divided into 2 types
+
+			1) Transactional Tables
+
+			2) Non-Transactional Tables
+
+-> If our application is perfoming INSERT / UPDATE / DELETE operations in table then it is called as Transactional Table.
+
+-> If our application is performing only SELECT operation in the table then it is called as Non-Transactional table.
+
+Examples : 
+
+-> When student register, then our application will insert student details into STUDENT_DTLS table (This is Transactional Table)
+
+-> When student open 'Register For Demo' pop-up it will display COUNTRY Name with Country Code to enter Mobile number. Here our application will read the data from COUNTRY_MASTER table. In our application we don't insert / update / delete data in COUNTRY_MASTER table (This is Non-Transactional table)
+
+-> If we retrieve contries data from table for multiple times also the data will be same and un-necessarily multiple queries will execute and it reduces our application performance.
+
+-> When we have this kind of scenario then its better to go for Cache Memory.
+
+-> Static tables data we should retrieve only one time and store into Cache memory.
+
+-> When our application needs that static we can retrieve from Cache instead of Retrieving from DB.
+
+-> Cache will be created in JVM and our application is also running in same JVM hence retrieval will be faster where as  DB calls are costly
+
+===============
+What is Cache ?
+===============
+
+-> Cache is a memory which is used to store the data in key-value format.
+
+-> If our application having a requirement to use satic data then it is highly recommended to use Cache in that application.
+
+-> Using cache data we can reduce no.of db calls and we can improve performance of the application.
+
+-> If we want to use cache in one application then we will go for Local cache. Local cache means we will implement with in our application.
+
+-> If we want to use cache data in several applications then we will go for Global Cache.
+
+=======================
+How to implement cache
+=======================
+
+-> Once application got started take data from db and store that into cache in the form of key-value pair.
+
+-> When application needs that data take it from cache memory instead of making db call.
+
+-> By using cache memory we can reduce no.of db calls hence application performance will be improved.
+
+==============================================
+Q) What is Local cache & What is distributed cache ?
+==============================================
+
+-> If we implement cache with in one application then it called as local cache.
+
+-> If we want to use cache data in multiple applications then we should go for distributed cache (Ex: Redis cache)
+
+=======================
+Q) What is Redis?
+=======================
+
+-> Redis is an open source cache which is used to store the data in the form key-value pair.
+
+-> Multiple applications can connect to Redis cache to access the data.
+
+=======================
+Redis Environment Setup
+=======================
+
+1) Download redis-server software
+
+2) Extract downloaded zip file
+
+3) Double click on redis-server.exe file (redis server will start)
+
+4) Double click on redis-cli.exe file
+
+5) Type ping in client cmd it will respond with PONG.
+
+Note : With this redis server setup is ready.
+
+Note: In realtime, redis-server will be installed in remote machine and they will share redis-server details (url, uname, pwd and port)
+
+==============================================
+Spring Boot Application with Redis Integration
+==============================================
+
+1) Create Spring Boot application with below dependencies
+
+		1) spring-boot-starter-web
+		2) spring-boot-starter-redis
+		3) project lombok
+		4) devtools
+		5) swagger & swagger-ui
+
+2) Configure JedisConnectionFactory bean with Redis Server details & inject JedisConnectionFactory bean into RedisTemplate bean
+
+3) Create Binding class class
+
+4) Create Service Class with required methods. Inject RedisTemplate into Repository bean and get HashOperations object to perform redis operations.
+
+5) Create Rest Controller with required methods
+
+6) Run the application and test it.
+
+
+===================================================================
+
+Spring Boot with Redis Integration Project Git repo : 
+https://github.com/ashokitschool/Springboot_Redis_App
+
+===================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

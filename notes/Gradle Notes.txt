@@ -1,0 +1,139 @@
+===========
+Gradle Tool
+===========
+
+=> It is an open source build automation tool
+
+=> Released in the year of 2007, Stable release came in 2009
+
+=> Gradle has taken advantages of both Ant & Maven and removed dis-advantages of both.
+
+=> Gradle written in Groovy Language
+
+=> Gradle tool makes project build automation process easy.
+
+=> Gradle tool used by large projects like Hibernate and Spring.
+
+==========================
+What is Project Build Process 
+==========================
+
+=> Project Build process contains several phases
+
+	1) Download Requied Dependencies (Ex: jdbc driver, hibernate, spring)
+
+          2) Add dependencies to project build path 
+
+	3) Compile Project Source Code
+
+	4) Execute Junit Unit Test Classes
+
+	5) Package project as a jar or war file (Executable artifact)
+	
+
+=> By performing above steps, we will convert project source code into executable file.
+
+
+############   Build Tools are used to automate build process of the projects ##############
+
+=> Build Tools are used to convert project source code into executable file
+
+
+1) Ant
+
+2) Maven
+
+3) Gradle
+
+================
+Gradle Setup 
+================
+
+1) Check Java is installed or not  (If not available install Java)
+
+		$ java -version
+
+2) Downlod Gradle s/w as Zip file & Extract it  (www.gradle.org)
+
+3) Set Path for Gradle in Environment Variables
+
+4) Check Gradle Version
+
+		$ gradle -v
+
+==================================================================================
+
+# To create a project using gradle we will use below command
+$ gradle init
+
+
+build.gradle  : It is gradle build script file  ( groovy or kotlin ) - DSL
+
+gradlew  : It is a wrapper to run Gradle in Linux & Mac OS machines
+
+gradlew.bat  : It is a wrapper to run Gradle in Windows Machines
+
+settings.gradle : To configure global settings of gadle project
+
+==================================================================================
+
+
+$ gradle tasks    === > It will display all gradle tasks
+
+Note: In gradle everything is called as Task (Ex : compile, test, build, jar , war, run etc... )
+
+$ gradle compileJava    ===> It is used to compile Java Classes
+
+$ gradle build ===> It is used for Compile + Unit Test + Package
+
+$ gradle run  ===> It will run our application main class
+
+$ gradle clean ==> It will delete build directory
+
+
+====================================================================================
+
+
+============================== build.gradle ==========================
+
+plugins {	
+	id 'java'
+}
+
+sourceCompatibility = 1.8
+targetCompatibility  = 1.8
+
+repositories {
+	mavenCentral ( )
+}
+
+dependencies {
+
+	implementation  'mysql-connector-j'
+
+	testImplemention  'junit'
+}
+
+jar {
+	archieveBaseName = 'app'
+	archieveVersion = '1.0'
+}
+
+======================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

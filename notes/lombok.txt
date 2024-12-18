@@ -1,0 +1,121 @@
+Today's session : Project Lombok 
+
+
+Note: Today' evening 8:45 PM (IST) Angular sessions will start (portal access will be provided for zoom link)
+
+From Wednesday @7:00 AM Docker & Kubernetes will start (we will provide portal access for zoom link)
+============================================================================================
+
+
+
+
+--> Every Project will be developed using layer architecture
+
+1) User interface ( front end) layer
+2) Web layer (controllers ---> responsible for handling user request & response)
+3) Service layer ( business logic)
+4) DAO layer ( data access layer --> responsible to communicate with database)
+
+-> When we have this layered architecture we need to transfer the data from one layer to another layer 
+
+			
+						     data
+			 frontend <-----------------------> backend
+						     data
+			
+
+-> To represent data we will use classes & objects in the project
+
+Note: Java is object oriented programming language, everything will be represented in the form of objects.
+
+-> The java classes which are used to represent the data they are called as binding classes.
+
+-> In one project we will use several binding classes.
+
+-> In all binding classes, same kind of code will be available. This is called boiler plate code.
+
+
+EX:
+
+setter methods
+getter methods
+0-param constructor
+parameterized constructor
+hashCode ( ) method
+equals ( ) method
+toString ( ) method etc......
+
+
+==============
+Project Lombok
+==============
+
+-> Project Lombok is a third party library which is used to avoid boiler plate code in java classes
+
+Note: The code which is repeated in multiple classes is called as Boiler Plate Code.
+
+-> Instead of we are writing boiler plate code we can use Lombok to generate that code.
+
+===================================
+How to use Project Lombok in our Project
+===================================
+
+Step-1 : Download Project Lombok Jar file from internet
+
+			URL : https://projectlombok.org/download
+
+Step-2 : Run Project Lombok jar file using below command
+
+		/>  java -jar  <lombok-jar-file>
+
+Step-3 : When we execute above command, it will open a window then select the location of your IDE till STS.exe / Eclipse.exe file then click on 'Install'
+
+Step-4 : Add Project Lombok dependency in Maven Project pom.xml file
+			
+<dependency>
+    <groupId>org.projectlombok</groupId>
+    <artifactId>lombok</artifactId>
+    <version>1.18.24</version>
+    <scope>provided</scope>
+</dependency>
+
+Step-5 : Re-Start your IDE
+
+
+Step-6 : Use Project Lombok provided Annotations in java class to avoid boiler plate code
+
+@Setters   : To generate setter methods for the variables in the class 
+
+@Getters  : To generate getter methods for the variables in the class
+
+@SettersAndGetters : It is the combination of @Setters + @Getters
+
+@NoArgsConstructor : It is used to generate 0-param constructor
+
+@ToString : It is used to generate toString ( ) method
+
+@EqualsAndHashCode: It is used to generate equals ( ) method and hashCode ( ) method
+
+
+Note: Instead of writing all the above annotations we can use @Data
+
+@Data   = @Setters + @Getters + @NoArgsConstructor + @ToString + @EqualsAndHashCode
+
+@AllArgsConstructor : It is used to generate constructor with all variables as constructor arguments.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
